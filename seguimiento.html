@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Equipos - SIC Argentina</title>
+    <meta name="description" content="Consulte el estado actual de su equipo en reparación en SIC Argentina.">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="img/logo-sic.png" alt="SIC Argentina Logo">
+                </a>
+                <nav class="main-nav">
+                    <button class="mobile-menu-btn" aria-label="Abrir menú">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-list">
+                        <li><a href="index.html#servicios">Servicios</a></li>
+                        <li><a href="index.html#nosotros">Nosotros</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                        <li><a href="seguimiento.html" class="active">Seguimiento</a></li>
+                    </ul>
+                </nav>
+                <div class="header-buttons">
+                    <a href="index.html#contacto" class="btn btn-outline">Solicitar Presupuesto</a>
+                    <a href="seguimiento.html" class="btn btn-primary">Seguimiento</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tracking Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1>Seguimiento de Equipos</h1>
+                <p>Consulte el estado actual de su equipo en reparación ingresando el número de orden proporcionado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracking Form Section -->
+    <section class="tracking-section">
+        <div class="container">
+            <div class="tracking-container">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Consultar Estado de Reparación</h2>
+                        <p>Ingrese el número de orden para verificar el estado de su equipo</p>
+                    </div>
+                    <div class="card-body">
+                        <form id="tracking-form" class="tracking-form">
+                            <div class="form-group">
+                                <input type="text" id="tracking-id" placeholder="Ingrese número de orden (ej: 12345)" required>
+                                <button type="submit" class="btn btn-primary">
+                                    <span class="btn-text">Buscar</span>
+                                    <span class="btn-loading"><i class="fas fa-spinner fa-spin"></i> Buscando</span>
+                                </button>
+                            </div>
+                        </form>
+                        <div id="tracking-result" class="tracking-result"></div>
+                    </div>
+                </div>
+
+                <div class="tracking-info">
+                    <div class="info-card">
+                        <h2>¿Cómo funciona el seguimiento?</h2>
+                        <div class="steps-container">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <h3>Ingrese su número</h3>
+                                <p>Introduzca el número de orden que recibió al dejar su equipo.</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <h3>Verifique el estado</h3>
+                                <p>Consulte el progreso de la reparación y la fecha estimada de entrega.</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <h3>Reciba notificaciones</h3>
+                                <p>Opcionalmente, reciba actualizaciones por email sobre el avance.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card contact-info-card">
+                        <div class="contact-info-content">
+                            <div class="contact-info-text">
+                                <h2>¿No tiene su número de orden?</h2>
+                                <p>Si no cuenta con su número de orden o tiene alguna consulta adicional, puede contactarnos directamente.</p>
+                                <div class="contact-details">
+                                    <div class="contact-item">
+                                        <i class="fas fa-phone-alt"></i>
+                                        <span>+54 11 1234-5678</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>soporte@sicargentina.com</span>
+                                    </div>
+                                </div>
+                                <a href="index.html#contacto" class="btn btn-primary">Contactar Soporte</a>
+                            </div>
+                            <div class="contact-info-image">
+                                <img src="img/contact-support.jpg" alt="Soporte técnico">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> SIC Argentina. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <div class="toast-icon">
+                <i class="fas fa-check-circle toast-success"></i>
+                <i class="fas fa-exclamation-circle toast-error"></i>
+            </div>
+            <div class="toast-message">
+                <p class="toast-title">Título del mensaje</p>
+                <p class="toast-description">Descripción del mensaje</p>
+            </div>
+            <button class="toast-close" aria-label="Cerrar notificación">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/tracking.js"></script>
+</body>
+</html>
