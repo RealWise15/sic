@@ -18,17 +18,27 @@ document.addEventListener("DOMContentLoaded", () => {
       const submitButton = contactForm.querySelector('button[type="submit"]')
       submitButton.classList.add("loading")
 
-      // Simulate form submission (replace with actual API call)
-      setTimeout(() => {
-        // Hide loading state
-        submitButton.classList.remove("loading")
+      // Dentro del submit del formulario:
+fetch("http://localhost:3000/api/contact", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+})
+  .then((res) => res.json())
+  .then((data) => {
+    submitButton.classList.remove("loading");
 
-        // Show success message
-        window.showToast("success", "Formulario enviado", "Nos pondremos en contacto con usted a la brevedad.")
-
-        // Reset form
-        contactForm.reset()
-      }, 1500)
+    if (data.success) {
+      window.showToast("success", "Formulario enviado", "Nos pondremos en contacto con usted a la brevedad.");
+      contactForm.reset();
+    } else {
+      window.showToast("error", "Error", data.error || "No se pudo enviar el formulario.");
+    }
+  })
+  .catch((err) => {
+    submitButton.classList.remove("loading");
+    window.showToast("error", "Error", "Hubo un problema con el servidor.");
+  });
     })
   }
 })
