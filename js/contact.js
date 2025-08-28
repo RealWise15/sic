@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       submitButton.classList.add("loading")
 
       // Dentro del submit del formulario:
-fetch("/api/contact", {
+fetch("https://cab652c64f05.ngrok-free.app/api/contact", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(formData),
