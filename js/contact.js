@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       submitButton.classList.add("loading")
 
       // Dentro del submit del formulario:
-fetch("http://localhost:3000/api/contact", {
+fetch("/api/contact", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(formData),
