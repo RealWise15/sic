@@ -166,7 +166,7 @@
                     <a href="seguimiento.html" class="text-link">Ver más detalles sobre el seguimiento <i class="fas fa-chevron-right"></i></a>
                 </div>
                 <div class="tracking-image">
-                    <img src="img/progress-chart.png" alt="Seguimiento de equipos">
+                    <img src="img/TrackRepairStatus.jpg" alt="Seguimiento de equipos">
                 </div>
             </div>
         </div>
@@ -210,7 +210,7 @@
                     </div>
                 </div>
                 <div class="contact-form-container">
-                    <form id="contact-form" class="contact-form">
+                    <form id="contact-form" class="contact-form" method="POST" action="/api/contact">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Nombre completo</label>
@@ -224,7 +224,7 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="phone">Teléfono</label>
-                                <input type="tel" id="phone" name="phone" placeholder="Ingrese su teléfono" required>
+                                <input type="tel" id="phone" name="phone" placeholder="Ingrese su teléfono" required pattern="[0-9]{10,15}">
                             </div>
                             <div class="form-group">
                                 <label for="service">Servicio de interés</label>
