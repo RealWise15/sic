@@ -1226,7 +1226,7 @@
 }
 
 .warranty-image img {
-  width: 50%;
+  width: 80%;
   height: auto;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
