@@ -620,7 +620,7 @@ ul {
 .tracking-image img {
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
-  width: 40%;
+  width: 100%;
   height: auto;
   margin: auto;
   object-fit: cover;
